@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Tiket API Class
  *
@@ -103,7 +103,7 @@ class TiketAPI{
 		return $json_response;
 	}
 
-	public function tiketUpdateData($token, $update, $salutation, $firstName, $lastName, $phone, $mobile, $gender, $birthDate, $IdCard, $passport){
+	public function tiketUpdateProfile($token, $update, $salutation, $firstName, $lastName, $phone, $mobile, $gender, $birthDate, $IdCard, $passport){
 	
 		$domain 	= "master18.tiket";
 		$api_uri	= "myaccount/profile";
@@ -202,7 +202,7 @@ class TiketAPI{
 	
 	# FLIGHT API
 	
-	public function tiketSearchFlight($token, $d, $a, $date, $ret_date, $adult, $child, $infant){
+	public function tiketFlightSearch($token, $d, $a, $date, $ret_date, $adult, $child, $infant){
 	
 		$domain 	= "master18.tiket";
 		$api_uri	= "search/flight";
@@ -221,7 +221,7 @@ class TiketAPI{
 		return $json_response;
 	}	
 	
-	public function tiketGetNearestAirportByIp($token, $ip){
+	public function tiketFlightGetNearestAirportByIp($token, $ip){
 		
 		$domain 	= "master18.tiket";
 		$api_uri	= "flight_api/getNearestAirport";
@@ -234,7 +234,7 @@ class TiketAPI{
 		return $json_response;
 	}
 	
-	public function tiketGetNearestAirportByLatLong($token, $latitude, $longitude){
+	public function tiketFlightGetNearestAirportByLatLong($token, $latitude, $longitude){
 		
 		$domain 	= "master18.tiket";
 		$api_uri	= "flight_api/getNearestAirport";
@@ -248,7 +248,7 @@ class TiketAPI{
 		return $json_response;
 	}
 
-	public function tiketGetPopularAirportDestination($token, $depart){
+	public function tiketFlightGetPopularAirportDestination($token, $depart){
 		
 		$domain 	= "master18.tiket";
 		$api_uri	= "flight_api/getPopularDestination";
@@ -261,7 +261,7 @@ class TiketAPI{
 		return $json_response;
 	}
 
-	public function tiketSearchAirport($token){
+	public function tiketFlightSearchAirport($token){
 	
 		$domain 	= "master18.tiket";
 		$api_uri	= "flight_api/all_airport";
@@ -273,7 +273,7 @@ class TiketAPI{
 		return $json_response;
 	}
 	
-	public function tiketCheckFlightUpdate($token, $d, $a, $date, $adult, $child, $infant, $time){
+	public function tiketFlightCheckFlightUpdate($token, $d, $a, $date, $adult, $child, $infant, $time){
 	
 		$domain 	= "master18.tiket";
 		$api_uri	= "ajax/mCheckFlightUpdate";
@@ -292,7 +292,7 @@ class TiketAPI{
 		return $json_response;
 	}
 
-	public function tiketGetLionCaptcha($token){
+	public function tiketFlightGetLionCaptcha($token){
 	
 		$domain 	= "master18.tiket";
 		$api_uri	= "flight_api/getLionCaptcha";
@@ -304,7 +304,7 @@ class TiketAPI{
 		return $json_response;
 	}
 
-	public function tiketAddOrderDomesticFlight($token, $lion, $batavia, $citilink, $flight_id, $ret_flight_id, $lioncaptcha, $lionsessionid, $child, $adult, $conSalutation, $conFirstName, $conLastName, $conPhone, $conEmailAddress, $firstnamea1, $lastnamea1, $ida1, $titlea1, $conOtherPhone, $titlec1, $firstnamec1, $lastnamec1, $birthdatec1, $idc1, $titlei1, $parenti1, $firstnamei1, $lastnamei1, $birthdatei1, $idii1){
+	public function tiketFlightAddOrderDomesticFlight($token, $lion, $batavia, $citilink, $flight_id, $ret_flight_id, $lioncaptcha, $lionsessionid, $child, $adult, $conSalutation, $conFirstName, $conLastName, $conPhone, $conEmailAddress, $firstnamea1, $lastnamea1, $ida1, $titlea1, $conOtherPhone, $titlec1, $firstnamec1, $lastnamec1, $birthdatec1, $idc1, $titlei1, $parenti1, $firstnamei1, $lastnamei1, $birthdatei1, $idii1){
 	
 		$domain 	= "master18.tiket";
 		$api_uri	= "order/add/flight";
@@ -358,7 +358,7 @@ class TiketAPI{
 		return $json_response;
 	}
 
-	public function tiketDeleteOrder($token, $detailorderid){
+	public function tiketFlightDeleteOrder($token, $detailorderid){
 	
 		$domain 	= "master18.tiket";
 		$api_uri	= "order/delete_order";
@@ -400,7 +400,7 @@ class TiketAPI{
 		return $json_response;
 	}
 
-	public function tiketCheckoutLoginMember($token, $username, $password, $flaglogin){
+	public function tiketFlightCheckoutLoginMember($token, $username, $password, $flaglogin){
 	
 		$domain 	= "master18.tiket";
 		$api_uri	= "checkout/checkout_customer";
@@ -415,7 +415,7 @@ class TiketAPI{
 		return $json_response;
 	}
 
-	public function tiketAvailablePayment($token){
+	public function tiketFlightAvailablePayment($token){
 	
 		$domain 	= "master18.tiket";
 		$api_uri	= "checkout/checkout_payment";
@@ -427,7 +427,7 @@ class TiketAPI{
 		return $json_response;
 	}	
 
-	public function tiketCheckoutPaymentBankTransfer($token, $btn_booking){
+	public function tiketFlightCheckoutPaymentBankTransfer($token, $btn_booking){
 	
 		$domain 	= "master18.tiket";
 		$api_uri	= "checkout/checkout_payment/2";
@@ -439,7 +439,7 @@ class TiketAPI{
 		return $json_response;
 	}
 	
-	public function tiketCheckoutPaymentKlikBCA($token, $user_bca){
+	public function tiketFlightCheckoutPaymentKlikBCA($token, $user_bca){
 	
 		$domain 	= "master18.tiket";
 		$api_uri	= "checkout/checkout_payment/3";
@@ -451,7 +451,7 @@ class TiketAPI{
 		return $json_response;
 	}	
 	
-	public function tiketConfirmPayment($token, $orderId, $hash, $bankName, $ownName, $total, $datepayment, $note){
+	public function tiketFlightConfirmPayment($token, $orderId, $hash, $bankName, $ownName, $total, $datepayment, $note){
 	
 		$domain 	= "master18.tiket";
 		$api_uri	= "confirmpayment/save";
@@ -469,7 +469,123 @@ class TiketAPI{
 		
 		return $json_response;
 	}
-
 	
 	# HOTEL API
+	
+	public function tiketHotelSearch($token, $q, $startdate, $night, $enddate, $room, $adult, $child, $sort, $minprice, $maxprice, $minstar, $maxstar, $latitude, $longitude){
+		
+		$domain 	= "master18.tiket";
+		$api_uri	= "search/hotel";
+		$token		= $token;
+		$parameters = array("q"					=>	$q,
+							"startdate"			=>	$startdate,
+							"night"				=>	$night,
+							"enddate"			=>  $enddate,
+							"room"				=>	$room,
+							"adult"				=>	$adult,
+							"child"				=>	$child,
+							"sort"				=> 	$short,
+							"minprice"			=> 	$minprice,
+							"maxprice"			=> 	$maxprice,
+							"minstar"			=> 	$minstar,
+							"maxstar"			=>	$maxstar,
+							"latitude"			=> 	$latitude,
+							"longitude"			=>	$longitude
+							);
+	
+		$json_response 	= $this->queryTiket($domain, $api_uri, $token, $parameters);
+		
+		return $json_response;
+	}
+	
+	public function tiketHotelSearchHotelPromo($token, $page, $startdate, $enddate){
+	
+		$domain 	= "master18.tiket";
+		$api_uri	= "home/hotelDeals";
+		$token		= $token;
+		$parameters = array("page"				=>	$page,
+							"startdate"			=>	$startdate,
+							"enddate"			=>  $enddate
+							);
+	
+		$json_response 	= $this->queryTiket($domain, $api_uri, $token, $parameters);
+		
+		return $json_response;
+	}
+	
+	public function tiketHotelSearchAutocomplete($token, $q){
+		
+		$domain 	= "master18.tiket";
+		$api_uri	= "search/autocomplete/hotel";
+		$token		= $token;
+		$parameters = array("q"	=> $q);
+	
+		$json_response 	= $this->queryTiket($domain, $api_uri, $token, $parameters);
+		
+		return $json_response;
+	}
+	
+	public function tiketHotelViewDetailHotel($token, $startdate, $night, $enddate, $room, $adult, $child){
+		
+		$domain 	= "master18.tiket";
+		$api_uri	= "the-101-legian";
+		$token		= $token;
+		$parameters = array("startdate"			=>	$startdate,
+							"night"				=>	$night,
+							"enddate"			=>  $enddate,
+							"room"				=>	$room,
+							"adult"				=>	$adult,
+							"child"				=>	$child
+							);
+	
+		$json_response 	= $this->queryTiket($domain, $api_uri, $token, $parameters);
+		
+		return $json_response;
+	}
+	
+	public function tiketHotelAddOrder($token, $startdate, $enddate, $night, $room, $adult, $child, $minstar, $minprice, $hotelname, $roomid, $haspromo){
+		
+		$domain 	= "master18.tiket";
+		$api_uri	= "order/add/hotel";
+		$token		= $token;
+		$parameters = array("startdate"			=>	$startdate,
+							"enddate"			=>  $enddate,
+							"night"				=>	$night,
+							"room"				=>	$room,
+							"adult"				=>	$adult,
+							"child"				=>	$child,
+							"minstar"			=> 	$minstar,
+							"minprice"			=> 	$minprice,
+							"hotelname"			=> 	$hotelname,
+							"room_id"			=>	$roomid,
+							"hasPromo"			=>	$haspromo
+							);
+	
+		$json_response 	= $this->queryTiket($domain, $api_uri, $token, $parameters);
+		
+		return $json_response;
+	}
+	
+	public function tiketHotelCheckoutCustomer($token, $salutation, $firstname, $lastname, $email, $phone, $consalutation, $confirstname, $conlastname, $conemail, $conphone, $detailid, $country){
+		
+		$domain 	= "master18.tiket";
+		$api_uri	= "checkout/checkout_customer";
+		$token		= $token;
+		$parameters = array("salutation"		=>	$salutation,
+							"firstName"			=>  $firstname,
+							"lastName"			=>	$lastname,
+							"emailAddress"		=>	$email,
+							"phone"				=>	$phone,
+							"conSalutation"		=>	$consalutation,
+							"conFirstName"		=> 	$confirstname,
+							"conLastName"		=> 	$conlastname,
+							"conEmailAddress"	=> 	$conemail,
+							"detailId"			=>	$detailid,
+							"country"			=>	$country
+							);
+	
+		$json_response 	= $this->queryTiket($domain, $api_uri, $token, $parameters);
+		
+		return $json_response;
+	}
 }
